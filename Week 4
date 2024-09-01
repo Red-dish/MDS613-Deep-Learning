@@ -1,0 +1,31 @@
+1.	What is GPU?
+- GPU is an upgraded version of a CPU consisting of many cores unlike CPU. Its cores are design to be efficient for parallel processing where its cores are smaller and densely packed,
+2. Why GPUs are well-suited to accelerate Neural Network training?
+-  GPU’s consist of many cores, made to handle many threads simultaneously making it ideal for parallel processing. Neural networks have operations such as matrix multiplications and convolutions, GPUs can perform these operations by going across many data points at once. 
+- In NN, large batches of data are processed during training. GPU’s make this much more efficient
+- In modern GPUs, there are hardware units that accelerate these matrix operations such as NVDIA which speeds up training
+- High memory bandwidth allows GPU to minimize the time required to move data in and out of memory.
+-  Libraries like CUDA help GPU architecture to move even faster to compute more efficiently in NN
+- GPUs can b scaled across multiple devices
+3. How is CUDA designed?
+- CUDA or Compute Unified Device Architecture is an optimized library used for GPUs. The function that runs in GPUs is called a Kernel. These kernels have block configurations and threads are organized into blocks and blocks are organized into grid. 
+Kernels are executed by many threads in parallel
+4. List as many hyperparameters as possible and explain how it affect training process 
+Learning Rate : It controls the size at which weighs are updated during training. High LR may cause poor accuracy while Low LR can cause slow processing.
+Batch Size : The number of examples needed to train a model. Smaller sizes can give more frequent updates, but produce more noise and instability. Big batches, can give slower but smoother updates but require more memory.
+Number of Hidden Layer : The number of layers the training process goes through, less layers mean less accuracy while more layers mean too complex and not suitable for testing
+Dropout Rate : Forces the model to ignore some neurons. While test set performance increases, the model performance decreases.
+Activation Function : Controls the process of inputs flowing into each neuron. Common functions include ReLU, Sigmoid, Hyperbolic Tangent (Tanh) 
+5. Discuss about advantages and disadvantages of the following activation functions: ReLU, Sigmoid, Hyperbolic Tangent (Tanh)
+ReLU: 
+Adv – Avoids vanishing gradient, simple, efficient
+Dis – Can have inactive neurons and produces unbounded outputs, leading to instability 
+Sigmoid
+Adv – Outputs between ) and 1, useful for binary, has a smooth gradient
+Dis – Vanishing gradient, slow learning
+
+Tanh:
+Adv – Output between -1 and 1, faster convergence smooth gradient, 
+Dis – suffers from vanishing gradient, more expensive than ReLU 
+
+ReLU is supposedly better, but vanishing gradient is a problem from Tanh and Sigmoid
